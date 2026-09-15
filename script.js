@@ -1,6 +1,7 @@
-    const hamburger = document.getElementById('hamburger');
+const hamburger = document.getElementById('hamburger');
 const navLinks = document.getElementById('navLinks');
 
+// Control para abrir y cerrar el menú en celulares
 hamburger.addEventListener('click', () => {
     navLinks.classList.toggle('active');
     const icon = hamburger.querySelector('i');
@@ -13,6 +14,7 @@ hamburger.addEventListener('click', () => {
     }
 });
 
+// Cerrar el menú automáticamente al hacer clic en cualquier opción
 document.querySelectorAll('.nav-links a').forEach(link => {
     link.addEventListener('click', () => {
         navLinks.classList.remove('active');
@@ -21,14 +23,3 @@ document.querySelectorAll('.nav-links a').forEach(link => {
         icon.classList.add('fa-bars');
     });
 });
-
-const contactForm = document.getElementById('contactForm');
-if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        const name = document.getElementById('name').value;
-        
-        alert(`¡Gracias, ${name}! Tu mensaje ha sido enviado con éxito a LOMBTEC. Nos pondremos en contacto contigo muy pronto.`);
-        contactForm.reset();
-    });
-}
